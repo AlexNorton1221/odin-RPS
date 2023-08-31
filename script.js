@@ -14,50 +14,73 @@ function getComputerChoice(){
     return computerChoice;
 }
 
-let playerSelection = prompt("Rock, Paper, Scissors... Go! Make your selection: ")
+//let playerSelection = prompt("Rock, Paper, Scissors... Go! Make your selection: ")
 let computerSelection = getComputerChoice();
+let winningChoice;
+let losingChoice;
+let playerScore = 0;
+let computerScore = 0;
+let resultMessage = "Blank!"
 
 function playRound(playerSelection, computerSelection){
-    computerChoice = getComputerChoice();
+    let computerChoice = getComputerChoice();
     console.log("Computer Choice = " + computerChoice);
-    playerChoice = playerSelection.toUpperCase();
+    let playerChoice = prompt("Rock, Paper, Scissors...Go! Make your decision: ").toUpperCase();
     console.log("Player Choice = " + playerChoice);
-    let winningChoice;
-    let losingChoice;
     let result;
-    
 
+    //Tie
     if (playerChoice == computerChoice){
-        return("You Tied!")
-    }
+        resultMessage = "You Tied! "
+        return("tie")
+    } //Player win
     else if (playerChoice == "ROCK" && computerChoice == "SCISSORS" ||
              playerChoice == "SCISSORS" && computerChoice == "PAPER" ||
              playerChoice == "PAPER" && computerChoice == "ROCK") 
         {
             winningChoice = playerChoice;
             losingChoice = computerChoice;
+            playerScore++;
+            resultMessage = "You Win! ";
             result = "win";
-        }
+        } //Computer win
     else if (computerChoice == "ROCK" && playerChoice == "SCISSORS" ||
              computerChoice == "SCISSORS" && playerChoice == "PAPER" ||
              computerChoice == "PAPER" && playerChoice == "ROCK")
         {
-        winningChoice = computerChoice;
-        losingChoice = playerChoice;
-        result = "lose";
+            winningChoice = computerChoice;
+            losingChoice = playerChoice;
+            computerScore++;
+            resultMessage = "You Lose! ";
+            result = "lose";
         }
+}
 
-    return("You " + result + "! " + winningChoice + " beats " + losingChoice)
-}/*
 function game(){
+    let roundResult;
     for (i = 0; i < 5; i++){
+        console.log("Round " + i);
         playRound();
-    }
 
-    for (let index = 0; index < array.length; index++) {
-        const element = array[index];
+        if (resultMessage == "You Tied! "){
+            console.log(resultMessage);
+            console.log("Player Score: " + playerScore);
+            console.log("ComputerScore: " + computerScore);
+        } else {
+            console.log(resultMessage + winningChoice + " beats " + losingChoice)
+            console.log("Player Score: " + playerScore);
+            console.log("ComputerScore: " + computerScore);
+        }
         
     }
-*/
 
-console.log(playRound(playerSelection, computerSelection));
+    if (playerScore > computerScore){
+        console.log("You won the game! You won " + playerScore + " round(s), while the computer won " + computerScore + " round(s)");
+    } else if (playerScore < computerScore){
+        console.log("You lost the game! You won " + playerScore + " round(s), while the computer won "  + computerScore + " round(s)");
+    } else if (playerScore == computerScore){
+        console.log("You tied the computer!");
+    }
+}
+
+game();
