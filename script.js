@@ -83,7 +83,7 @@ window.onload=function(){
     scissorsBtn.addEventListener('click', () => {
         playRound("SCISSORS");
         playerSelectionBox.textContent = "Scissors";
-        computerSelectionBox.textcontent = computerChoice;
+        computerSelectionBox.textContent = computerChoice;        
         resultBox.textContent = resultMessage;
     });
 

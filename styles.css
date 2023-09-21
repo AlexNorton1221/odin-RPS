@@ -1,3 +1,47 @@
+.page{
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: space-between;
+    height: 100%;
+}
+
 .buttons {
-    
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+}
+
+.output {
+    margin-top: 5%;
+    height: 80%;
+    display: flex; 
+    flex-flow: column nowrap;
+    width: 100%;
+    align-items: center;
+}
+
+.selections {
+    width: 100%;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    margin-bottom: 5%;
+    flex-grow: 1;
+}
+
+.player, .computer{
+    margin: 2%;
+    background-color: rgba(255, 166, 0, 0.767);
+    padding: 2%;
+    width: 30%;
+    height: 20%;
+    border: 3px solid rgb(255, 115, 0);
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: start;
+}
+
+.results {
+    font-size: 64px;
 }
