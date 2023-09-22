@@ -66,7 +66,7 @@ window.onload=function(){
     const rockBtn = document.querySelector('.rock');
     rockBtn.addEventListener('click', () => {
         playRound("ROCK");
-        playerSelectionBox.textContent = "Rock";
+        playerSelectionBox.textContent = "ROCK";
         computerSelectionBox.textContent = computerChoice;
         resultBox.textContent = resultMessage;
     });
@@ -74,7 +74,7 @@ window.onload=function(){
     const paperBtn = document.querySelector('.paper');
     paperBtn.addEventListener('click', ()=>{
         playRound("PAPER");
-        playerSelectionBox.textContent = "Paper";
+        playerSelectionBox.textContent = "PAPER";
         computerSelectionBox.textContent = computerChoice;
         resultBox.textContent = resultMessage;
     });
@@ -82,7 +82,7 @@ window.onload=function(){
     const scissorsBtn = document.querySelector('.scissors');
     scissorsBtn.addEventListener('click', () => {
         playRound("SCISSORS");
-        playerSelectionBox.textContent = "Scissors";
+        playerSelectionBox.textContent = "SCISSORS";
         computerSelectionBox.textContent = computerChoice;        
         resultBox.textContent = resultMessage;
     });
