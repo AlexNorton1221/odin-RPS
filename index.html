@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
-    <script src="./script.js"></script>
+    
 </head>
 <body>
 
@@ -23,6 +23,10 @@
     
     <div class="output">
         <div class="selections">
+            <div class="playerScoreBox">
+                <div class="scoreTitle">Your Score</div>
+                <div class="playerScore">0</div>
+            </div>
             <div class="player">
                 <div class="selectionTitle">Your Choice</div>
                 <div class="playerSelection">  Make your selection  </div>
@@ -32,15 +36,13 @@
                 <div class="selectionTitle">Computer's Choice</div>
                 <div class="computerSelection">  Waiting...  </div>
             </div>
+            <div class="computerScoreBox">
+                <div class="scoreTitle">Computer Score</div>
+                <div class="computerScore">0</div>
+            </div>
         </div>
-
-        <div class="score">
-            <div class="playerScore"></div>
-            <div class="computerScore"></div>
-        </div>
-
         <div class="results"></div>
     </div>
-     
+     <script src="./script.js"></script>
 </body>
 </html>

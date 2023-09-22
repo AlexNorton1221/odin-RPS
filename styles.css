@@ -64,11 +64,11 @@ button:hover {
     display: flex;
     flex-flow: row nowrap;
     justify-content: center;
+    gap: 10px;
     margin-bottom: 2%;
 }
 
 .player, .computer{
-    margin: 2%;
     padding: 10px;
     background: linear-gradient(to bottom,rgb(142, 142, 240) 0 45%,rgb(174, 174, 243) 45% 100%);
     min-width: 20%;
@@ -81,10 +81,20 @@ button:hover {
     border-radius: 30px;
 }
 
-.selectionTitle {
-    /* margin-bottom: 5%; */
+.playerScoreBox, .computerScoreBox{
+    padding: 10px;
+    background: linear-gradient(to bottom,rgb(142, 142, 240) 0 45%,rgb(174, 174, 243) 45% 100%);
+    min-width: 15%;
+    min-height: 130px;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: space-around;
+    font-size: 40px;
+    border-radius: 30px;
 }
 
 .results {
     font-size: 120px;
+    margin-top: 5%;
 }
