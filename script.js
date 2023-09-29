@@ -55,6 +55,7 @@ function gameOver() {
 }
 
 // window.onload=function(){
+    const buttonBox = document.querySelector('.buttons');    
     const rockBtn = document.querySelector('.rock');
     const paperBtn = document.querySelector('.paper');
     const scissorsBtn = document.querySelector('.scissors');
@@ -69,15 +70,7 @@ function gameOver() {
     scissorsBtn.addEventListener('click', () => handleClick("SCISSORS"));
 
 function handleClick(playerChoice){
-    if(gameOver()){
-        resultBox.textContent = "Game Over!"
-        
-        //disable choice buttons
-        //create restart button
-
-        console.log("GAME OVER!");
-        return;
-    }
+    
 
     computerChoice = getComputerChoice();
     playerSelectionBox.textContent = playerChoice;
@@ -86,7 +79,32 @@ function handleClick(playerChoice){
     playerScoreDisplay.textContent = playerScore;
     computerScoreDisplay.textContent = computerScore;
     resultBox.textContent = resultMessage;
-    console.log("PS = " + playerScore);
-    console.log("CS = " + computerScore);
+
+    if(gameOver()){
+        resultBox.textContent = "Game Over!"
+            if (playerScore > computerScore){
+                resultBox.textContent = "Game Over! You Win!";
+            }
+            else
+                resultBox.textContent = "Game Over! You Lose!";
+        
+        buttonBox.removeChild(rockBtn);
+        buttonBox.removeChild(paperBtn);
+        buttonBox.removeChild(scissorsBtn);
+
+        const restartBtn = document.createElement('button');
+        restartBtn.classList.add('restart');
+        restartBtn.textContent = "Restart Game";
+        restartBtn.addEventListener('click', () => {
+            location.reload();
+        });
+
+        buttonBox.appendChild(restartBtn);
+
+
+
+        console.log("GAME OVER!");
+        return;
+    }
 };
 // }
